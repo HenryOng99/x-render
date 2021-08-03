@@ -1,5 +1,5 @@
 import React from 'react';
-import Generator from 'fr-generator';
+import Generator from '@henryong/fr-generator';
 import './index.less';
 
 const {

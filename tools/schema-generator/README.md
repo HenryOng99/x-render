@@ -14,7 +14,7 @@ npm i fr-generator
  * defaultShowCode: true
  */
 import React from 'react';
-import Generator from 'fr-generator';
+import Generator from '@henryong/fr-generator';
 
 const defaultValue = {
   type: 'object',

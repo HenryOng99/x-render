@@ -5,7 +5,10 @@ import { addItem } from '../../utils';
 import { useGlobal, useStore } from '../../utils/hooks';
 import './Element.css';
 
-const Element = ({ text, name, schema, icon, fixedName }) => {
+const Element = ({ text, name, schema, icon, fixedName, show }) => {
+
+  if (show === false) return (<></>);
+  
   const [{ isDragging }, dragRef] = useDrag({
     type: 'box',
     item: {

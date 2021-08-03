@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Generator from 'fr-generator';
+import Generator from '@henryong/fr-generator';
 import { vsemit, vson } from './utils';
 
 const { preview, theme = true } = window.pluginConfig;

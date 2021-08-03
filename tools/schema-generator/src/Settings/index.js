@@ -30,7 +30,7 @@ export const defaultCommonSettings = {
     required: true,
   },
   title: {
-    title: '标题',
+    title: 'Title',
     type: 'string',
   },
   description: {
