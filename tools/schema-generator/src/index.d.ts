@@ -31,6 +31,8 @@ export interface SettingWidget {
   name: string;
   /** 在左侧栏按钮展示文案 */
   text: string;
+  /** Enable show/hide widget */
+  show?: boolean;
   /** 如果是基本组件，这个字段注明它对应的 widgets */
   widget?: string;
   /** 组件对应的 schema 片段 */
@@ -44,6 +46,10 @@ export interface Setting {
   title: string;
   /** 每个组件的配置，在左侧栏是一个按钮 */
   widgets: SettingWidget[];
+  /** Enable collapse widgets */
+  collapsible?: boolean;
+  /** Set collapse widgets */
+  isOpen?: boolean;
   show?: boolean;
   useCommon?: boolean;
 }

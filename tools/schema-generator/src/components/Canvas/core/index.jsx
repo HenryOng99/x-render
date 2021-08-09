@@ -9,7 +9,7 @@ import Wrapper from './Wrapper';
 const PreviewFR = ({ schema }) => {
   const form = useForm();
   const { flatten, widgets, mapping, userProps, onFlattenChange } = useStore();
-  const renderSchema = userProps.transformer.to(schema);
+  const renderSchema = userProps.transformer.from(schema);
 
   useEffect(() => {
     form.setValues(flattenToData(flatten));

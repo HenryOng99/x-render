@@ -3,6 +3,9 @@ import { defaultSettings } from '../../settings';
 import { useStore } from '../../utils/hooks';
 import './index.css';
 import Element from './Element';
+import { Collapse } from 'antd';
+
+const { Panel } = Collapse;
 
 const Sidebar = props => {
   const { userProps = {} } = useStore();
@@ -15,6 +18,27 @@ const Sidebar = props => {
         _settings.map((item, idx) => {
           if (item && item.show === false) {
             return null;
+          }
+          if (item && item.collapsible === true) {
+            return (
+              <div key={idx}>
+                <Collapse defaultActiveKey={item.isOpen ? idx : undefined}>
+                  <Panel className="f6 b" header={item.title}  key={idx}>
+                    <ul className="pl0">
+                      {Array.isArray(item.widgets) ? (
+                        item.widgets.map((widget, idx) => {
+                          return (
+                            <Element key={idx.toString()} {...props} {...widget} />
+                          );
+                        })
+                      ) : (
+                        <div>此处配置有误</div>
+                      )}
+                    </ul>
+                  </Panel>
+                </Collapse>
+              </div>
+            );
           }
           return (
             <div key={idx}>
