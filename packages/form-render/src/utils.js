@@ -399,12 +399,12 @@ export function isExpression(func) {
   // 这样的pattern {{.....}}
   const pattern = /^{{(.+)}}$/;
   const reg1 = /^{{(function.+)}}$/;
-  const reg2 = /^{{(.+=>.+)}}$/;
+  // const reg2 = /^{{(.+=>.+)}}$/;
   if (
     typeof func === 'string' &&
     func.match(pattern) &&
-    !func.match(reg1) &&
-    !func.match(reg2)
+    !func.match(reg1)
+    //&& !func.match(reg2)
   ) {
     return true;
   }
