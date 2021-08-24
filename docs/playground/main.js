@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import parseJson from 'json-parse-better-errors';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 import DefaultSchema from './json/simplest.json';
 import { Tabs } from 'antd';
 import AsyncSelect from './customized/AsyncSelect';

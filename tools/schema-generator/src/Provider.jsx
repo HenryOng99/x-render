@@ -11,7 +11,7 @@ import zhCN from 'antd/lib/locale/zh_CN';
 import {
   widgets as defaultWidgets,
   mapping as defaultMapping,
-} from 'form-render';
+} from '@henryong/form-render';
 import {
   flattenSchema,
   idToSchema,

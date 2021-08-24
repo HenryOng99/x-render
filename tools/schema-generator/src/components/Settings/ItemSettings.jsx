@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 import IdInput from '../../widgets/idInput';
 import PercentSlider from '../../widgets/percentSlider';
 import {
