@@ -47,5 +47,5 @@
     "monaco-editor-webpack-plugin": "^4.0.0",
     "react-monaco-editor": "^0.43.0"
   },
-  "version": "1.21.1"
+  "version": "0.0.0"
 }
