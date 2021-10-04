@@ -9,11 +9,12 @@ import './index.less';
 const { TabPane } = Tabs;
 
 export default function Settings({ widgets }) {
+  const { selected, userProps = {} } = useStore();
+  const globalSettings = userProps.globalSettings || defaultGlobalSettings;
   const [state, setState] = useSet({
-    showRight: true,
+    showRight: globalSettings?.show ?? true,
     showItemSettings: false,
   });
-  const { selected } = useStore();
   const { showRight, showItemSettings } = state;
 
   const toggleRight = () => setState({ showRight: !showRight });
@@ -21,7 +22,7 @@ export default function Settings({ widgets }) {
   const ToggleIcon = () => (
     <div
       className="absolute top-0 left-0 pointer"
-      style={{ height: 30, width: 30, padding: '8px 0 0 8px' }}
+      style={{ height: 30, width: 30, padding: '8px 0 0 8px', color:"black" }}
       onClick={toggleRight}
     >
       <RightOutlined className="f5" />
@@ -41,8 +42,10 @@ export default function Settings({ widgets }) {
   useEffect(() => {
     if ((selected && selected[0] === '0') || selected === '#' || !selected) {
       setState({ showItemSettings: false });
+      setState({showRight: false});
     } else {
       setState({ showItemSettings: true });
+      setState({showRight: true});
     }
   }, [selected]);
 
@@ -51,13 +54,13 @@ export default function Settings({ widgets }) {
       <ToggleIcon />
       <Tabs defaultActiveKey="1" onChange={() => {}}>
         {showItemSettings && (
-          <TabPane tab="Configuration" key="1">
+          <TabPane tab="Item Configuration" key="1">
             <ItemSettings widgets={widgets} />
           </TabPane>
         )}
-        <TabPane tab="Report Configuration" key={showItemSettings ? '2' : '1'}>
+        {globalSettings?.show !== false ? <TabPane tab="Configuration" key={showItemSettings ? '2' : '1'}>
           <GlobalSettings widgets={widgets} />
-        </TabPane>
+        </TabPane> : <></>}
       </Tabs>
     </div>
   ) : (

@@ -25,14 +25,14 @@ export default function GlobalSettings({ widgets }) {
 
   return (
     <div style={{ paddingRight: 24 }}>
-      <FormRender
+      {globalSettings.show !== false ? <FormRender
         form={form}
         schema={globalSettings}
         watch={{
           '#': v => onDataChange(v),
         }}
         widgets={{ ...globalWidgets, ...widgets }}
-      />
+      /> : <></>}
     </div>
   );
 }

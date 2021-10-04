@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Input, Button, message } from 'antd';
+import { Modal, Input, Button, message, Row, Col } from 'antd';
 import copyTOClipboard from 'copy-text-to-clipboard';
 import FR from './core';
 import { looseJsonParse, isObject, schemaToState } from '../../utils';
@@ -67,39 +67,58 @@ const Canvas = () => {
   return (
     <div className="mid-layout pr2">
       <div className="mv2 mh1">
-        {_showDefaultBtns[0] !== false && (
-          <Button
-            className="mr2 mb1"
-            onClick={() => {
-              setState({ preview: !preview });
-              setGlobal({ selected: '#' });
-            }}
-          >
-            {preview ? 'Edit' : 'Preview'}
-          </Button>
-        )}
-        {_showDefaultBtns[1] !== false && (
-          <Button className="mr2" onClick={clearSchema}>
-            Clear
-          </Button>
-        )}
-        {_showDefaultBtns[2] !== false && (
-          <Button className="mr2" onClick={toggleModal2}>
-            Import Schema
-          </Button>
-        )}
-        {_showDefaultBtns[3] !== false && (
-          <Button type="primary" className="mr2" onClick={toggleModal}>
-            Export Schema
-          </Button>
-        )}
-        {_extraBtns.map((item, idx) => {
-          return (
-            <Button key={idx.toString()} className="mr2" {...item}>
-              {item.text || item.children}
-            </Button>
-          );
-        })}
+        <Row>
+          {_showDefaultBtns[0] !== false && (
+            <Col>
+              <Button
+                className="mr2 mb1"
+                onClick={() => {
+                  setState({ preview: !preview });
+                  setGlobal({ selected: '#' });
+                }}
+              >
+                {preview ? 'Edit' : 'Preview'}
+              </Button>
+            </Col>
+          )}
+          {_showDefaultBtns[1] !== false && (
+            <Col>
+              <Button className="mr2 mb1" onClick={clearSchema}>
+                Clear
+              </Button>
+            </Col>
+          )}
+          {_showDefaultBtns[2] !== false && (
+            <Col>
+              <Button className="mr2 mb1" onClick={toggleModal2}>
+                Import Schema
+              </Button>
+            </Col>
+          )}
+          {_showDefaultBtns[3] !== false && (
+            <Col>
+              <Button type="primary" className="mr2 mb1" onClick={toggleModal}>
+                Export Schema
+              </Button>
+            </Col>
+          )}
+          {_extraBtns.map((item, idx) => {
+            if (item.component) {
+              return (
+                <Col className="mr2 mb1" key={idx.toString()}>
+                  <item.component />
+                </Col>
+              )
+            }
+            return (
+              <Col key={idx.toString()} className="mr2 mb1">
+                <Button {...item}>
+                  {item.text || item.children}
+                </Button>
+              </Col>
+            );
+          })}
+        </Row>
       </div>
       <div className={`dnd-container ${preview ? 'preview' : 'edit'}`}>
         <div style={{ height: preview ? 33 : 0 }}></div>
