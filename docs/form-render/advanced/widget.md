@@ -45,7 +45,7 @@ const schema = {
 ```jsx
 import React, { useState } from 'react';
 import { Input, Button } from 'antd';
-import Form, { useForm } from 'form-render';
+import Form, { useForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',
@@ -115,7 +115,7 @@ export default Demo;
 
 ```js
 import { Checkbox } from 'antd';
-import { createWidget } from 'form-render';
+import { createWidget } from '@henryong/form-render';
 
 const MyCheckBox = (({ value, ...rest }) => {
   return <Checkbox checked={value} {...rest} />
@@ -173,7 +173,7 @@ const SiteInput = ({ readOnly, value, ...rest }) => {
 
 ```js
 //  /Component/FormRender.js
-import Form from 'form-render';
+import Form from '@henryong/form-render';
 import Cascade from './Cascade';
 import Percentage from './Percentage';
 import MyCheckBox from './MyCheckBox';
@@ -197,7 +197,7 @@ const FormRender = props => {
 然后在每个 form 页面统一引入使用
 
 ```js
-import { useForm } from 'form-render';
+import { useForm } from '@henryong/form-render';
 import FormRender from './Component/FormRender';
 const Demo1 = props => {
   const form = useForm();

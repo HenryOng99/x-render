@@ -6,7 +6,7 @@ import Table from './Table';
 import { message, ConfigProvider } from 'antd';
 import _get from 'lodash.get';
 import zh_CN from 'antd/lib/locale/zh_CN';
-import { useForm } from 'form-render';
+import { useForm } from '@henryong/form-render';
 
 import './index.css';
 

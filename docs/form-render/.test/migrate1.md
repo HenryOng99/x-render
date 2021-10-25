@@ -67,7 +67,7 @@ export default Demo;
 
 ```jsx
 import React, { useState } from 'react';
-import FormRender, { useForm } from 'form-render'; // 1 依赖
+import FormRender, { useForm } from '@henryong/form-render'; // 1 依赖
 
 const schema = {
   type: 'object',
@@ -116,7 +116,7 @@ export default Demo;
 
 ```jsx
 import React from 'react';
-import FormRender, { useForm } from 'form-render'; // 1
+import FormRender, { useForm } from '@henryong/form-render'; // 1
 
 const schema = {
   type: 'object',

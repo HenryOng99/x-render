@@ -35,7 +35,7 @@ toc: false
 
 ```jsx
 import React from 'react';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',

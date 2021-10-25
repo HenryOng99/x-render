@@ -3,6 +3,7 @@ import { Tabs } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
 import ItemSettings from './ItemSettings';
 import GlobalSettings from './GlobalSettings';
+import { defaultGlobalSettings } from '../../settings';
 import { useStore, useSet } from '../../utils/hooks';
 import './index.less';
 

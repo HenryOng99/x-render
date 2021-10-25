@@ -1,7 +1,7 @@
 ```jsx
 import React, { useState, useEffect } from 'react';
 import { Button, Modal, Switch } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const Demo = () => {
   const [show, set1] = useState(false);

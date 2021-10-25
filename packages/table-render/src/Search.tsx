@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTable } from './hooks';
 import { Button } from 'antd';
-import SearchForm from 'form-render';
+import SearchForm from '@henryong/form-render';
 
 const SearchBtn = ({
   clearSearch,

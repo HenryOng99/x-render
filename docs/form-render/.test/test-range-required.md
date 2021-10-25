@@ -1,7 +1,7 @@
 ```jsx
 import React, { useEffect } from 'react';
 import { Button, message, Space } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',

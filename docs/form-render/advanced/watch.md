@@ -19,7 +19,7 @@ order: 5
  */
 import React, { useEffect } from 'react';
 import { Button } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',
@@ -67,7 +67,7 @@ form.setSchemaByPath 指定路径对 schema 进行修改
  */
 import React, { useEffect } from 'react';
 import { Button } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',

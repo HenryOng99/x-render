@@ -77,7 +77,7 @@ export default Demo;
  * defaultShowCode: true
  */
 import React, { useState, useEffect } from 'react';
-import FormRender, { useForm } from 'form-render'; // 1. 改 import
+import FormRender, { useForm } from '@henryong/form-render'; // 1. 改 import
 
 const schema = {
   type: 'object',

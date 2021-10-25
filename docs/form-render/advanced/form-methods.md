@@ -35,7 +35,7 @@ onFinish
  */
 import React, { useState, useEffect } from 'react';
 import { Button, Space, message } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 import { fakeApi, delay } from './utils';
 
 const Demo = () => {
@@ -107,7 +107,7 @@ export default Demo;
  */
 import React from 'react';
 import { Button, message } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 import { fakeApi } from './utils';
 
 const schema = {
@@ -176,7 +176,7 @@ export default Demo;
  */
 import React from 'react';
 import { Button, message, Space } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 import { fakeApi } from './utils';
 
 const schema = {
@@ -237,7 +237,7 @@ export default Demo;
  */
 import React, { useEffect } from 'react';
 import { Button, message } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 import { fakeApi } from './utils';
 
 const schema = {

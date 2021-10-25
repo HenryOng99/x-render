@@ -44,7 +44,7 @@ npm i form-render --save
 ```jsx
 import React from 'react';
 import { Button } from 'antd';
-import FormRender, { connectForm } from 'form-render';
+import FormRender, { connectForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',
@@ -85,7 +85,7 @@ export default connectForm(Demo);
 ```jsx
 import React from 'react';
 import { Button } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',
@@ -129,7 +129,7 @@ export default Demo;
 ## 组件 Props
 
 ```js
-import Form, { useForm, connectForm } from 'form-render';
+import Form, { useForm, connectForm } from '@henryong/form-render';
 ```
 
 ### \<Form \/> (常用 props)
@@ -179,7 +179,7 @@ const validateMessages = {
 `useForm` / `connectForm` 用于创建表单实例，所有对表单的外部操作和回调函数全挂在其生产的实例上,例如表单提交是 `form.submit`。注意 `useForm` 是 hooks，而 `connectForm` 是高阶组件，所以前者只能在函数组件使用，后者可用于 class 组件。两者无其他区别。使用时需要创建实例，并通过 props 挂钩到与其对应的表单上：
 
 ```js
-import Form, { useForm } from 'form-render';
+import Form, { useForm } from '@henryong/form-render';
 
 const Demo = () => {
   const form = useForm();
@@ -188,7 +188,7 @@ const Demo = () => {
 ```
 
 ```js
-import Form, { connectForm } from 'form-render';
+import Form, { connectForm } from '@henryong/form-render';
 
 const Demo = ({ form }) => {
   return <Form form={form} schema={...} />;
