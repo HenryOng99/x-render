@@ -13,7 +13,7 @@ toc: content
 ```jsx
 import React from 'react';
 import { Button } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const CustomComA = props => {
   const { schema } = props;

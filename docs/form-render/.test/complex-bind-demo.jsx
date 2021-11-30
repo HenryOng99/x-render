@@ -4,7 +4,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import { Button, Space, message, Tag } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 import { fakeApi, delay } from './advanced/utils';
 import RichTextEditor from '../../widgets/RichText/src';
 

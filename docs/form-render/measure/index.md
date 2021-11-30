@@ -48,7 +48,7 @@ const form = useForm({
  */
 import React, { useEffect } from 'react';
 import { Button, Space, message } from 'antd';
-import FormRender, { useForm } from 'form-render';
+import FormRender, { useForm } from '@henryong/form-render';
 
 const Demo = () => {
   const form = useForm({

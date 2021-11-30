@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Select } from 'antd';
-import Form, { useForm } from 'form-render';
+import Form, { useForm } from '@henryong/form-render';
 
 const schema = {
   type: 'object',
