@@ -26,8 +26,8 @@
   },
   "peerDependencies": {
     "antd": "4.x",
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
   },
   "dependencies": {
     "@henryong/form-render": "1.1.1",

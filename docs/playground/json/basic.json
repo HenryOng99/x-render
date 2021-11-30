@@ -27,23 +27,12 @@
             "format": "image",
             "default": "http://placekitten.com/200/300"
           },
-          "url": {
-            "title": "网址",
-            "type": "string",
-            "format": "url",
-            "props": {
-              "prefix": "https://"
-            }
-          },
           "uploader": {
             "title": "上传文件",
             "type": "string",
             "format": "upload",
-            "uploadProps": {
+            "props": {
               "action": "https://www.mocky.io/v2/5cc8019d300000980a055e76"
-            },
-            "buttonProps": {
-              "type": "primary"
             }
           },
           "treeSelect": {
@@ -210,47 +199,6 @@
             "enum": ["A", "B", "C", "D"],
             "enumNames": ["杭州", "武汉", "湖州", "贵阳"],
             "widget": "checkboxes"
-          },
-          "cascade": {
-            "title": "级联选择",
-            "type": "array",
-            "widget": "cascader",
-            "props": {
-              "options": [
-                {
-                  "value": "zhejiang",
-                  "label": "Zhejiang",
-                  "children": [
-                    {
-                      "value": "hangzhou",
-                      "label": "Hangzhou",
-                      "children": [
-                        {
-                          "value": "xihu",
-                          "label": "West Lake"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "value": "jiangsu",
-                  "label": "Jiangsu",
-                  "children": [
-                    {
-                      "value": "nanjing",
-                      "label": "Nanjing",
-                      "children": [
-                        {
-                          "value": "zhonghuamen",
-                          "label": "Zhong Hua Men"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
           }
         }
       },

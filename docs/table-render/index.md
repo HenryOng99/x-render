@@ -69,7 +69,7 @@ for (let i = 0; i < 6; i++) {
 const schema = {
   type: 'object',
   properties: {
-    string: {
+    title: {
       title: '标题',
       type: 'string',
       width: '30%',
@@ -154,6 +154,9 @@ export default withTable(Page)
 | searchBtnClassName | 自定义表单操作按钮组的 ClassName                                                      | `string`                               | ''      | 否   |
 | debug              | 开启 debug 模式，时时显示内部状态，**开发的时候强烈建议打开**                         | `boolean`                              | `false` | 否   |
 
+- **api**： `api` 是 `<Search />` 最重要的 属性，`api` 是一个函数，有两个入参：`params`、`sorter`，分别是表单筛选项的值、排序参数。它的返回值是一个`Object`，此`Object`中必须要有 rows 和 total，其中rows即`dataSource` ，total 用于分页。`api` 会接管 loading 的设置，同时在表单查询和 params 参数发生修改时重新执行。同时 查询表单的值和 params 参数也会带入。
+
+
 ### `<Table>` 参数
 
 **支持所有 antd table 的 props，但是`dataSource`, `loading`, `pagination`这几个参数是内部状态，不需要填写，最基本的使用就需要填写`columns`**
@@ -212,7 +215,7 @@ export default withTable(Page)
   {
     loading: false, // 表单是否在加载中
     search: {}, // 选项数据
-    searchApi // 搜索用的api
+    searchApi, // 搜索用的api
     tab: 0, // 如果searchApi是数组，需要在最顶层感知tab，来知道到底点击搜索调用的是啥api
     dataSource: [], // 表格的数据
     extraData: { ... }, // 自定义的扩展星系

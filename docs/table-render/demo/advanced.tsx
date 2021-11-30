@@ -38,8 +38,8 @@ const schema = {
 const Demo = () => {
   const { refresh, tableState }: any = useTable();
 
-  const searchApi = params => {
-    console.log('params >>> ', params);
+  const searchApi = (params, sorter) => {
+    console.group(sorter);
     return request
       .get(
         'https://www.fastmock.site/mock/62ab96ff94bc013592db1f67667e9c76/getTableList/api/basic',
@@ -51,6 +51,25 @@ const Demo = () => {
           return {
             rows: res.data,
             total: res.data.length,
+            extraData: res.status,
+          }; // 注意一定要返回 rows 和 total
+        }
+      })
+      .catch(e => console.log('Oops, error', e));
+  };
+
+  const searchApi2 = (params, sorter) => {
+    return request
+      .get(
+        'https://www.fastmock.site/mock/62ab96ff94bc013592db1f67667e9c76/getTableList/api/basic',
+        { params }
+      )
+      .then(res => {
+        // console.log('response:', res);
+        if (res && res.data) {
+          return {
+            rows: res.data.slice(1),
+            total: res.data.length - 1,
             extraData: res.status,
           }; // 注意一定要返回 rows 和 total
         }
@@ -106,6 +125,7 @@ const Demo = () => {
     {
       title: '酒店GMV',
       key: 'money',
+      sorter: true,
       dataIndex: 'money',
       valueType: 'money',
     },
@@ -153,8 +173,6 @@ const Demo = () => {
       <Search
         schema={schema}
         displayType="row"
-        onSearch={search => console.log('onSearch', search)}
-        afterSearch={params => console.log('afterSearch', params)}
         api={[
           {
             name: '全部数据',
@@ -162,12 +180,13 @@ const Demo = () => {
           },
           {
             name: '我的数据',
-            api: searchApi,
+            api: searchApi2,
           },
         ]}
       />
       <Table
         // size="small"
+        pagination={{ pageSize: 4 }}
         columns={columns}
         // headerTitle="高级表单"
         rowKey="id"
