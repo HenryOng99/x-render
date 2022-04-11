@@ -6,7 +6,7 @@
 import React, { forwardRef } from 'react';
 import FormRender from './index';
 import { ConfigProvider } from 'antd';
-import zhCN from 'antd/lib/locale/zh_CN';
+import enUS from 'antd/lib/locale/en_US';
 import {
   mapping as defaultMapping,
   widgets as defaultWidgets,
@@ -18,7 +18,7 @@ const AntdForm = (
   ref
 ) => {
   return (
-    <ConfigProvider {...configProvider} locale={zhCN}>
+    <ConfigProvider {...configProvider} locale={enUS}>
       <FormRender
         mapping={{
           ...defaultMapping,
